@@ -2,7 +2,6 @@ from fastapi import APIRouter, UploadFile, File, HTTPException
 from utils.processing import analyze_media
 
 router = APIRouter()
-
 @router.post("/image")
 async def detect_image(file: UploadFile = File(...)):
     if not file.content_type.startswith("image/"):
